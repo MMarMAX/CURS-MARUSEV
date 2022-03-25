@@ -1,51 +1,33 @@
 from tkinter import *
-def btnAddBook():
-    #Создание окна
-    root1 = Tk()
-    root1.title('Library Manager')
-    root1.minsize(width=400, height=600)
-    root1.geometry("600x500")
+from addBook import btnAddBook
+def btnDeleteBook():
+    root2 = Tk()
+    root2.title("Library Manager")
+    root2.minsize(width=400, height=600)
+    root2.geometry("600x500")
 
-    #Создание надписи
-    headFrame2 = Frame(root1, bg='#0417a4',bd=5)
-    headFrame2.place(relx=0.2, rely=0.1, relwidth=0.6, relheight=0.16)
-    headLabel2 = Label(headFrame2, text="Добавление книги", bg='white', fg='#0417a4', font=("Arial Black", 15))
-    headLabel2.place(relx=0, rely=0, relwidth=1, relheight=1)
+    headFrame3 = Frame(root2, bg="#003366", bd=5)
+    headFrame3.place(relx=0.25, rely=0.1, relwidth=0.5, relheight=0.13)
+    headLabel3 = Label(headFrame3, text="Удалить книгу", bg='white', fg='#003366', font=('Arial Black',15))
+    headLabel3.place(relx=0,rely=0, relwidth=1, relheight=1)
+    labelFrame = Frame(root2, bg='black')
+    labelFrame.place(relx=0.1, rely=0.3, relwidth=0.8, relheight=0.5)
 
-
-    labelFrame = Frame(root1, bg='black')
-    labelFrame.place(relx=0.1, rely=0.35, relwidth=0.8, relheight=0.5)
-    #ID книги
-    lb1 = Label(labelFrame, text="ID книги : ", bg='black', fg="white", font=("Arial Black", 10))
-    lb1.place(relx=0.05, rely=0.2, relheight=0.08)
+    lb = Label(labelFrame, text="ID книги : ", bg='black', fg='white',font=("Arial Black", 10))
+    lb.place(relx=0.05, rely=0.5)
 
     bookInfo1 = Entry(labelFrame)
-    bookInfo1.place(relx=0.24, rely=0.2, relwidth=0.6, relheight=0.07)
-    #Название книги
-    lb2 = Label(labelFrame, text="Название : ", bg='black', fg='white', font=("Arial Black", 10))
-    lb2.place(relx=0.05, rely=0.35, relheight=0.08)
+    bookInfo1.place(relx=0.3, rely=0.5, relwidth=0.62)
 
-    bookInfo2 = Entry(labelFrame)
-    bookInfo2.place(relx=0.24, rely=0.35, relwidth=0.6, relheight=0.07)
-    #Автор
-    lb3 = Label(labelFrame, text="Автор : ", bg='black', fg='white',font=("Arial Black", 10))
-    lb3.place(relx=0.05, rely=0.5, relheight=0.08)
-
-    bookInfo3 = Entry(labelFrame)
-    bookInfo3.place(relx=0.18, rely=0.5, relwidth=0.6, relheight=0.07)
-    #Статус книги
-    lb4 = Label(labelFrame, text="Статус (в/н) : ", bg='black', fg='white', font=("Arial Black", 10))
-    lb4.place(relx=0.03, rely=0.65, relheight=0.08)
-
-    bookInfo4 = Entry(labelFrame)
-    bookInfo4.place(relx=0.24, rely=0.65, relwidth=0.6, relheight=0.07)
-    #Кнопка "Подтвердить"
-    submitBtn = Button(root1, text="Подтвердить", bg='#0417a4', fg='white',font=("Arial Black", 10))
+    submitBtn = Button(root2, text="Подтвердить", bg="#003366", fg='white',font=('Arial Black',10))
     submitBtn.place(relx=0.12, rely=0.85, relwidth=0.18, relheight=0.08)
 
-    #Кнопка "Выйти"
-    quitBtn = Button(root1, text="Выйти", bg="#ff6666", fg='white', font=("Arial Black", 10), )
+    quitBtn = Button(root2, text="Выйти", bg='#ff6666', fg='white', font=("Arial Black", 10))
     quitBtn.place(relx=0.7, rely=0.85, relwidth=0.18, relheight=0.08)
+
+
+
+
 
 
 
@@ -65,7 +47,7 @@ btn1 = Button(root, text="Добавить книгу", bg='white', fg='#1890ec'
 btn1.place(relx=0.29, rely=0.39, relwidth=0.43, relheight=0.1)
 
 btn2 = Button(root, text="Удалить книгу", bg='white',
-              fg='#1890ec', font=("Arial Black", 13))
+              fg='#1890ec', font=("Arial Black", 13), command=btnDeleteBook)
 
 btn2.place(relx=0.29, rely=0.49,relwidth=0.43, relheight=0.1)
 
