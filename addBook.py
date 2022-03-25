@@ -44,5 +44,5 @@ def btnAddBook():
     submitBtn.place(relx=0.12, rely=0.85, relwidth=0.18, relheight=0.08)
 
     #Кнопка "Выйти"
-    quitBtn = Button(root1, text="Выйти", bg="#ff6666", fg='white', font=("Arial Black", 10), )
+    quitBtn = Button(root1, text="Выйти", bg="#ff6666", fg='white', font=("Arial Black", 10),command=root1.destroy )
     quitBtn.place(relx=0.7, rely=0.85, relwidth=0.18, relheight=0.08)
