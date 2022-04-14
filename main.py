@@ -19,7 +19,7 @@ class CurrencyConverter():
 
 url='https://api.exchangerate-api.com/v4/latest/USD'
 converter= CurrencyConverter(url)
-print(converter.convert('USD','RUB',100))
+print(converter.convert('RUB','USD',10000))
 
 
 
