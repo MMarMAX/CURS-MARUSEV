@@ -53,6 +53,16 @@ class App(tk.Tk):
                                            values=list(self.converter.currencies.keys()), font=font,
                                            state='readonly', width=12, justify=tk.CENTER)
 
+  #Размещение элементов
+  self.from_currency_dropdown.place(x=30, y=120)
+  self.amount_field.place(x=36, y=150)
+  self.to_currency_dropdown.place(x=340, y=120)
+  self.converted_amount_field.place(x=346, y=150)
+
+
+  self.convert_button = Button(self, text="Convert", fg="black", command=self.perform)
+
+
 
 
 
