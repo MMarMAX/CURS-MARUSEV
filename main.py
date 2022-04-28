@@ -73,6 +73,21 @@ class App(tk.Tk):
   converted_amount = round(converted_amount, 2)
   self.converted_amount_field.config(text=str(converted_amount))
 
+  def restrictNumberOnly(self, action, string):
+        regex = re.compile(r"[0-9,]*?(\.)?[0-9,]*$")
+        result = regex.match(string)
+        return (string == "" or (string.count('.') <= 1 and result is not None))
+
+
+
+if __name__ == '__main__':
+   url = 'https://api.exchangerate-api.com/v4/latest/USD'
+   converter = CurrencyConverter(url)
+
+   App(converter)
+   mainloop()
+
+
 
 
 
